@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <title>Login Form</title>
+   
+   <script>
+                        function login_id() {
+                                var user=["abdul","sree","jagdish","subash"];
+                                var password=["abdul123","sree000","jagdish789","subash1"];
+                                var flag = true;
+                                var user1 = document.forms["myForm"]["login"].value;
+                                var pass1 = document.forms["myForm"]["password"].value;
+                                                    if (user1 == null || user1 == "" || pass1 == null || pass1 == "") {
+                                                                        alert("All filled should be filled");
+                                                                } else {
+                                                                                for(var i = 0 ; i < user.length ; i++) {
+                                                                                        if(user1 === user[i]) {
+                                                                                                        if(pass1 === password[i]) {
+                                                                                                                alert("Hello u r logged in");
+                                                                                                                flag = false ;
+                                                                                                                break ;
+                                                                                                        }
+                                                                                        }
+                                                                                }
+                                                                }
+
+
+                                                                if(flag) {
+                                                                        alert("Username or Password is incorrect");
+                                                                }
+                        }
+                </script>
+   
+  <link rel="stylesheet" type="text/css" href="mystyle.css">
+
+</head>
+<body>
+  <section class="container">
+    <div class="login">
+      <h1>Login to your Page</h1>
+	  <form name="myForm" id="myform">
+        <p><input type="text" id="login" value="" placeholder="Username/Email"></p>
+        <p><input type="password" id="password" value="" placeholder="Password"></p>
+        <p class="remember_me">
+          <label>
+            <input type="checkbox" name="remember_me" id="remember_me">
+            Remember me on this computer
+          </label>
+        </p>
+        <p class="submit"><input type="button" name="commit" onclick="login_id();" value="Login"></p>
+      </form>
+    </div>
+
+    <div class="login-help">
+      <p>Forgot your password? <a href="index.html">Click here to reset it</a>.</p>
+    </div>
+  </section>
+
+ 
+</body>
+</html>
